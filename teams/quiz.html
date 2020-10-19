@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quiz</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="wrapper gradient">
+        <!-- page content -->
+        <div class="bg-wrap-quiz clearfix">
+            <ol class="wrap-quiz clearfix">
+            </ol>
+        </!-->
+        <!-- /.wrap-quiz -->
+        <div class="wrap-result v-center red">
+            <div class="time-span"></div>
+            <div id="userScore">
+                <h1>Congratulations!</h1>
+                <p>You finished the trivia!</p>
+            </div>
+            <div class="time-result"></div>
+        </div>
+        <div class="wrap-gameover v-center">
+            <h1>Game Over</h1>
+            <p>Sorry, you could not complete this race.</p>
+        </div>
+        <div class="quiz-team-name">
+            <div class="quiz-plane"></div>
+            <span class="team-home-name"></span>
+        </div>
+    </div>
+    <!-- /.wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+
+    $(".team-home-name").html(localStorage.getItem("teamName"));
+    $(".quiz-plane").addClass(localStorage.getItem("randomTeamId"));
+    var socket = io();
+    socket.emit('quizOnload', localStorage.getItem("randomTeamId"));
+    socket.on('quizOnload', function(quizData) {
+        if (quizData["teamId"] == localStorage.getItem("randomTeamId")) {
+            var questionsAnswered = 0
+            jQuery.map(Object.keys(quizData), function(val, i) {
+                if (val.startsWith("q")) {
+                    questionsAnswered += 1;
+                }
+            });
+            if (questionsAnswered > 0) {
+                $(".col").removeClass("active").addClass("next")
+                $(".col").each(function(index, value) {
+                    if (index < questionsAnswered) {
+                        $(this).removeClass("next").addClass("past")
+                    }
+                    if (index == questionsAnswered) {
+                        $(this).removeClass("next").addClass("active")
+                    }
+                })
+            }
+        }
+    })
+
+
+    // Assign each answer to localStorage
+    // $('.question-group label').watch('class', function () {
+    //     var questionNumber = $(this).children().attr('name');
+    //     var questionResult = 0;
+    //     console.log('questionNumber', questionNumber)
+    //     if ($(this).hasClass('wrong')) {
+    //         questionResult = 0;
+    //     } else if ($(this).hasClass('correct')) {
+    //         questionResult = 1;
+    //     }
+    //     console.log('questionResult', questionResult)
+    //     localStorage.setItem(questionNumber, questionResult)
+    // })
+
+    $('.wrap-result').watch('class', function () {
+        var questionResult = {};
+        $('.question-group label').each(function() {
+            if ($(this).hasClass('wrong')) {
+                var questionResult = 0;
+                console.log($(this))
+            } else if ($(this).hasClass('correct')) {
+                questionResult = 1;
+                console.log($(this))
+            }
+        })
+        localStorage.setItem("Question1", questionResult)
+    })
+
+
+
+
+    // $('.hotspot-gotostats').click(function () {
+    //     var ranks = {}
+    //     $(".progress-group").each(function () {
+    //         if (!$(this).hasClass("hide")) {
+    //             ranks[$(this).attr("id")] = $(this).find('.rank').text()
+    //             console.log($(this))
+    //         }
+    //     })
+    //     console.log("ranks", JSON.stringify(ranks))
+    //     localStorage.setItem("teamsRank", JSON.stringify(ranks))
+    // })
+
+    //check for page refresh
+    // if (performance.navigation.type == 1) {
+    //     window.location.href = '/game-over.html';
+    // }
+    </script>
+</body>
+
+</html>

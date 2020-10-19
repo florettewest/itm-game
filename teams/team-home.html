@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team screen</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="wrapper gradient">
+        <div class="stars"></div>
+        <!-- page content  page content-->
+        <div class="inner">
+            <div class="bg-team">
+                <h2>Welcome<br><span class="team-home-name"></span></h2>
+                <p>Get ready, the quiz is about to start!</p>
+                <div class="team-home__plane"></div>
+            </div>
+        </div>
+        <!-- /.inner -->
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+    </div>
+    <!-- /.wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+        $(".team-home-name").html(localStorage.getItem("teamName"));
+        $(".team-home__plane").addClass(localStorage.getItem("randomTeamId"))
+        var socket = io();
+        socket.emit('teamHomeWelcome',false);
+        socket.on('teamHomeWelcome', function(message) {
+            if(message){
+                window.location.href = "/quiz.html"
+            }
+        })
+
+        socket.on('adminAllowTeamName', function (message) {
+            if (message) {
+                window.location.href = "/team-choice"
+            }
+        })
+
+        socket.on('devControl-initateQuiz', function(team) {
+            if (team == localStorage.getItem("randomTeamId")) {
+                window.location.href = "/quiz.html"
+            }
+        })
+    </script>
+</body>
+
+</html>

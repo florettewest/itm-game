@@ -1,0 +1,255 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team statistics</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="wrapper gradient">
+        <!-- page content -->
+        <div class="inner">
+            <div class="stats__table success_rate">
+                <div class="stats__row">
+                    <div class="stats__col-team team-title">
+                        Teams
+                    </div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            Success rate
+                        </div>
+                    </div>
+                    <div class="stats__col-rank">
+                        Rank
+                    </div>
+                </div>
+                <div class="stats__row hide team-a">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-b">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-c">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-d">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-e">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-f">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-g">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-h">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+            </div>
+            <div class="stats__table time-spent">
+                <div class="stats__row">
+                    <div class="stats__col-team team-title">
+                    </div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            Average answering speed
+                        </div>
+                    </div>
+                    <div class="stats__col-rank">
+                    </div>
+                </div>
+                <div class="stats__row hide team-a">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-b">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-c">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-d">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-e">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-f">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-g">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+                <div class="stats__row hide team-h">
+                    <div class="stats__col-team"></div>
+                    <div class="stats__col-bar">
+                        <div class="stats__bar">
+                            <div class="stats__bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="stats__col-rank"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.inner -->
+    </div>
+    <!-- /.wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+    var socket = io();
+    socket.emit('adminStats', "adminStats");
+    socket.on('adminStats', function(teamNameJsonData) {
+
+        //bar width calculations
+        console.log('teamNameJsonData', teamNameJsonData);
+        for (var index in teamNameJsonData.teamDetails) {
+            var teamVal = teamNameJsonData.teamDetails[index]
+            var teamEle = $(".success_rate").find("." + teamVal["teamId"])
+            teamEle.removeClass("hide")
+            teamEle.find(".stats__col-team").text(teamVal["teamName"])
+            var totalPercentage = 0;
+            if(teamVal["totalQuestionsAnswered"] !=0){
+                totalPercentage = teamVal["noOfAnsCorrect"] / teamVal["totalQuestionsAnswered"]  * 100;
+            }
+            teamEle.find(".stats__bar").css("width", totalPercentage + "%")
+            teamEle.find(".stats__bar-percent").text(Math.round(totalPercentage) + "%")
+            teamEle.attr("id", teamVal["teamId"])
+        }
+
+        var highestTimeTaken = 0;
+        for (var i = 0; i < teamNameJsonData.teamDetails.length; i++) {
+            var value = teamNameJsonData.teamDetails[i]
+            if (value["totalTimeTaken"] > highestTimeTaken) {
+                highestTimeTaken = value["totalTimeTaken"];
+            }
+        }
+
+        var highestTimeTaken = 0;
+        for (var i = 0; i < teamNameJsonData.teamDetails.length; i++) {
+            var value = teamNameJsonData.teamDetails[i]
+            var teamAverage = value["totalTimeTaken"] / value["totalQuestionsAnswered"]
+            if (teamAverage > highestTimeTaken) {
+                highestTimeTaken = teamAverage;
+            }
+        }
+
+        for (var index in teamNameJsonData.teamDetails) {
+            var teamVal = teamNameJsonData.teamDetails[index]
+            var teamEle = $(".time-spent").find("." + teamVal["teamId"])
+            teamEle.removeClass("hide")
+            teamEle.find(".stats__col-team").text(teamVal["teamName"])
+            var totalTimePercentage = teamVal["totalTimeTaken"] / (highestTimeTaken * teamVal["totalQuestionsAnswered"])  * 100;
+            teamEle.find(".stats__bar").css("width", totalTimePercentage + "%")
+            teamEle.find(".stats__bar-percent").text((teamVal["totalTimeTaken"] /(teamVal["totalQuestionsAnswered"] *1000)).toFixed(1) + "s")
+            teamEle.attr("id", teamVal["teamId"])
+        }
+
+        var ranks = JSON.parse(localStorage.getItem("teamsRank"))
+        for (var teamId in ranks) {
+            $("."+teamId).find(".stats__col-rank").text(ranks[teamId])
+
+        }
+    });
+    </script>
+</body>
+
+</html>

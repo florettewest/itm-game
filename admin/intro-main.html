@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Intro</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body class="anime-on">
+    <div class="wrapper gradient">
+        <div class="stars"></div>
+        <!-- page content -->
+        <div class="inner">
+            <img class="logo v-center" src="images/cloud9-logo.png" />
+            <div class="credits">
+                brought to you by Westpac Digital Solutions
+                <!-- <img src="/images/Digital-Solutions2.png"/> -->
+            </div>
+            <div class="game-title">Babylon training</div>
+            <!-- <div class="trivia-url">https://whispering-ocean-65840.herokuapp.com/</div> -->
+        </div>
+        <!-- /.inner -->
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+        <button class="initate-team-registration hotspot">initiate team registration</button>
+        <div class="lds-dual-ring"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../../scripts/app.js"></script>
+    <script type="text/javascript">
+    var socket = io();
+    socket.emit('adminIntro', "adminIntro");
+    socket.on('adminIntro', function(data) {
+        console.log('adminIntro', data)
+        // window.location.href = "/admin-team-main";
+        window.location.href = '/plane-race.html';
+    });
+    $(window).load(function (){
+        localStorage.clear();
+        alert("localStorage cleared")
+    });
+
+    $(".initate-team-registration").on("click", function () {
+        $('.lds-dual-ring').fadeIn();
+        setTimeout(() => {
+            $('.lds-dual-ring').fadeOut();
+        }, 5000);
+        console.log("Allow client name initiated")
+        socket.emit('adminAllowTeamName', "adminAllowTeamName");
+    })
+    </script>
+</body>
+
+</html>
+

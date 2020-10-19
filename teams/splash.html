@@ -1,0 +1,89 @@
+<html class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"
+  lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body class="body-splash">
+  <div class="wrapper gradient">
+    <!-- page content -->
+    <div class="inner">
+      <div class="team-name">
+        <img class="logo" src="images/cloud9-logo.png" />
+        <div class="credits">
+          brought to you by Westpac Digital Solutions
+          <!-- <img src="/images/Digital-Solutions2.png"/> -->
+        </div>
+        <div class="game-title">Babylon training</div>
+      </div>
+    </div>
+    <!-- /.inner -->
+    <button class="clear-storage" style="position: absolute;width: 50px;height: 50px;top: 0;left: 0;z-index: 10;cursor: pointer;background: none;border: none;text-indent: -9999px;">Clear local storage</button>
+  </div>
+  <script type="text/javascript">
+
+    var socket = io();
+
+    // Clear storage
+    // $(window).on('load', function () {
+    //   localStorage.clear();
+    //   alert("localStorage cleared")
+    // })
+
+
+    // For testing
+    $('.clear-storage').on('click', function () {
+      localStorage.clear();
+      alert("localStorage cleared")
+    })
+
+    // Clear storage (set "cookie" to clear local store after 1 hour)
+    if (localStorage.startSession === undefined) {
+      var start = Date.now();
+      localStorage.clear();
+      localStorage.setItem("startSession", start);
+      console.log('New session', localStorage.startSession)
+      alert('First session: localStorage cleared')
+      // alert('New session: ' + localStorage.startSession)
+    }
+
+    var checkTime = Date.now();
+    console.log(('checkTime - localStorage', checkTime - localStorage.startSession) / 1000)
+    console.log('checkTime', checkTime)
+    console.log('localStorage', localStorage.startSession)
+    // alert('This time: ' + checkTime)
+    // alert('Seconds past: ' + (checkTime - localStorage.startSession) / 1000)
+
+    if ((checkTime - localStorage.startSession) / 1000 > 3600) { // 3600 seconds = 1 hour
+      console.log("more than 1 hour");
+      localStorage.clear();
+      alert("New session: localStorage cleared")
+      location.reload();
+    }
+
+    // // for testing: clear local storage every 20 seconds
+    // if ((checkTime - localStorage.startSession) / 1000 > 20) {
+    //   console.log("more than 1 hour");
+    //   localStorage.clear();
+    //   alert("localStorage cleared")
+    //   location.reload();
+    // }
+
+    socket.on('adminAllowTeamName', function (message) {
+      if (message) {
+        window.location.href = "/team-choice"
+      }
+    })
+  </script>
+</body>
+
+</html>

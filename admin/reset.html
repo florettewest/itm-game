@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reset</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body class="anime-on">
+    <div class="wrapper gradient">
+        <div class="stars"></div>
+        <!-- page content -->
+        <div class="inner">
+            <img class="logo v-center" src="images/cloud9-logo.png" />
+            <div>
+              <a href="#" id="js-reset-btn" class="export-btn" style="float: none; margin: 0; top: -104px; position: relative;">Reset</a>
+            </div>
+        </div>
+        <!-- /.inner -->
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../../scripts/app.js"></script>
+    <script type="text/javascript">
+    var socket = io();
+    $('#js-reset-btn').click(function(){
+        socket.emit('resetBtn', "resetBtn");
+        socket.emit('adminAllowTeamName', "adminAllowTeamName");
+        console.log("Reset clicked");
+        alert("The game was reset");
+        location.href = '/admin-intro';
+    });
+    </script>
+</body>
+
+</html>

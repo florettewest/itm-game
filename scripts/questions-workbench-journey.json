@@ -1,0 +1,116 @@
+{
+    "questions": [
+        {
+            "question": "1. For service campaigns the Marketing Checklist is optional",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "2. MRM stands for Marketing Research Management",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "3. In the Double Diamond approach, the initial diamond consists of:",
+            "options": [
+                {
+                    "answer": "Discover, Ideate and Frame",
+                    "result": 0
+                },
+                {
+                    "answer": "Define, Discover and Frame",
+                    "result": 1
+                },
+                {
+                    "answer": "Design, Discover and Frame",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "4. Journey Workbench caters for customer engagement via",
+            "options": [
+                {
+                    "answer": "public digital channels only",
+                    "result": 0
+                },
+                {
+                    "answer": "secured online banking only",
+                    "result": 0
+                },
+                {
+                    "answer": "multiple channels such as websites, SMS, EDMs, etc.",
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "5. Journey Workbench allows Squad members to orchestrate experiences withing the customer journey steps",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "6. Customer Facing Content Framework is applicable for Digital experiences only",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "7. DDO requires that all Product information in marketing comms must meet accessibility standards",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "8. Branding guidelines exist to make things fun and light-hearted",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        }
+    ]
+}

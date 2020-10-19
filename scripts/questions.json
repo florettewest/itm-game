@@ -1,0 +1,186 @@
+{
+    "questions": [
+        {
+            "question": "1. In Babylon current Product data can be downloaded from the \"Direct update\" screen",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "2. \"Bulk upload\" is an efficient way to update large volumes of Product data via a CSV file",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "3. \"Direct updates\" are a quick way of updating Product data without needing an Approver",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "4. Babylon supports the following Product data types: interest rate, fee, effective date, disclaimers and loan amount",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "5. Additional Product attributes can be added by updating the CSV source file with new columns as part of a \"Bulk upload\"",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "6. Once published in Babylon the changes may take up to 20 minutes to appear in the websites",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "7. Only Authors can create Change Requests whether it's by \"Direct Updates\" or \"Bulk upload\"",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "8. Any user listed in a Portfolio can be nominated as an Approver for the Change Request",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "9. All users listed in a Portfolio will be notified via email when a Change Request is submitted, approved, published or rejected",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "10. For a Portfolio there can multiple Change Requests active at any given time",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "11. A Change Request in Pending state can be cancelled by contacting the Systems Admin",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 0
+                },
+                {
+                    "answer": false,
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "12. Babylon supports all Portfolios for WBC, STG, BOM and BSA",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "13. Babylon allows Product data to be used on web pages, calculators and forms",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "14. Babylon allows Product data to be shared with other platforms such as Westpac Live, Compass and external vendors",
+            "options": [
+                {
+                    "answer": true,
+                    "result": 1
+                },
+                {
+                    "answer": false,
+                    "result": 0
+                }
+            ]
+        }
+    ]
+}

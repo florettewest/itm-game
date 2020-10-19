@@ -1,0 +1,78 @@
+<html class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team choice</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="wrapper gradient">
+        <!-- page content -->
+        <div class="inner">
+            <div class="team-name">
+                <label>Enter your avatar name here*</label>
+                <input class="teamNameValue" type="text" id="teamNameValue">
+                <!-- <input type="submit" value="Submit" onclick="location.href = '/team-home.html';"> -->
+                <input type="submit" value="Submit" id="submit-team-name">
+            </div>
+        </div>
+        <!-- /.inner -->
+        <p class="asterisc">* 50 characters max.</p>
+        <button class="clear-storage"  style="position: absolute;width: 50px;height: 50px;top: 0;left: 0;z-index: 10;cursor: pointer;background: none;border: none;text-indent: -9999px;">Clear local storage</button>
+    </div>
+    <p id='server-time'></p>
+    <p id='server-time1'></p>
+    <!-- <script src="/theme.js"></script> -->
+    <script type="text/javascript">
+
+    var socket = io();
+    $("#submit-team-name").on("click", function() {
+        if($("#teamNameValue").val() != ""){
+            var teamName = {};
+            var serviceId = Math.random().toString(36).substring(2,9)
+            teamName["teamName"] = $("#teamNameValue").val()
+            teamName["serviceId"] = serviceId
+            localStorage.setItem("teamName", teamName["teamName"])
+            localStorage.setItem("serviceId", serviceId)
+            if(localStorage.hasOwnProperty("randomTeamId")){
+                teamName["teamId"] = localStorage.getItem("randomTeamId")
+            }else{
+                //localStorage.setItem("randomTeamId", randomTeamId)
+                teamName["teamId"] = "notassigned"
+            }
+            socket.emit("teamName", teamName);
+
+        }
+    })
+    // socket.on("teamName",function(data){
+    //     if (data["serviceId"] == localStorage.getItem("serviceId")) {
+    //         localStorage.setItem("randomTeamId",data["teamId"])
+    //         window.location.href = "/team-home"
+    //     }
+    // })
+
+    socket.on("teamName", function (data) {
+        if (data["serviceId"] == localStorage.getItem("serviceId")) {
+            localStorage.setItem("randomTeamId", data["teamId"])
+            window.location.href = "/quiz.html"
+            console.log("quiz button initiated")
+            socket.emit('adminPageTeamNames-initiateQuiz', "initiate quiz");
+        }
+    })
+
+    // Clear storage
+    // $(window).on('load', function(){
+    //     localStorage.clear();
+    //     alert("localStorage cleared")
+    // })
+    </script>
+</body>
+
+</html>

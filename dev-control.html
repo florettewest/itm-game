@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team screen</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="wrapper gradient">
+        <div class="stars"></div>
+        <!-- page content  page content-->
+        <div class="inner">
+            <div class="allTeamNames">
+            </div>
+            <br>
+            <br>
+            <div class="delete-team">
+                <label>Delete team</label>
+                <input class="teamNameValue" type="text" id="teamNameValue">
+                <input type="submit" value="Submit" id="delete-team-name">
+            </div>
+            <div class="delete-team-success-msg">
+            </div>
+            <div class="inititate-quiz-individals">
+                <label>inititate quiz</label>
+                <input class="teamNameValue" type="text" id="teamNameValue-quiz">
+                <input type="submit" value="Submit" id="initiate-quiz">
+            </div>
+            <div class="delete-team-success-msg">
+            </div>
+            <div class="quiz-results">
+                <label>Quiz results</label>
+                <input class="teamNameValue" type="text" id="teamNameValue-results">
+                <input type="submit" value="Submit" id="quiz-results">
+                <br>
+                <table style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Question no</th>
+                            <th>Answer choosen</th>
+                            <th>Answer status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.inner -->
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+    </div>
+    <!-- /.wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+    var socket = io();
+    socket.emit('devControl-allTeamNames', false);
+    socket.on('devControl-allTeamNames', function(message) {
+        console.log(message)
+        var html = ""
+        for (key in message) {
+            html += key + " - " + message[key] + "<br>"
+        }
+        $(".allTeamNames").html(html)
+    })
+    $("#delete-team-name").on("click", function() {
+        socket.emit('devControl-deleteTeam', $("#teamNameValue").val());
+        socket.on('devControl-deleteTeam', function(message) {
+            $(".delete-team-success-msg").text("deleted team successfully", message)
+        })
+    })
+    $("#initiate-quiz").on("click", function() {
+        socket.emit('devControl-initateQuiz', $("#teamNameValue-quiz").val());
+        /*socket.on('devControl-initateQuiz',function(message){
+
+        })*/
+    })
+    $("#quiz-results").on("click", function() {
+        socket.emit('devControl-teamResults', $("#teamNameValue-results").val());
+        socket.on('devControl-teamResults', function(teamNameJsonData) {
+            console.log("team", teamNameJsonData)
+            var html = ""
+             for (var index in teamNameJsonData) {
+                if(index.startsWith("q")){
+                    var item = teamNameJsonData[index]
+                    html += "<tr>" +
+                            "<td>"+ item.questionNo+ "</td>"+
+                            "<td>"+ item.answerchoosen+ "</td>"+
+                            "<td>"+ item.answerStatus+ "</td>"+
+                            "</tr>"
+                }
+            }
+                $("tbody").html(html)
+        })
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team screen</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body class="anime-on">
+    <div class="wrapper gradient">
+        <div class="stars"></div>
+        <!-- page content -->
+        <div class="inner">
+            <div class="welcome-main">
+                <div class="welcome hide team-a">
+                    <div class="plane">
+                        <div class="smoke"><img src="/images/planes/smoke.gif"></div>
+                    </div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-b">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-c">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-d">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-e">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-f">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-g">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-h">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-i">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-j">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-k">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+                <div class="welcome hide team-l">
+                    <div class="plane"></div>
+                    <h4></h4>
+                </div>
+            </div>
+            <!-- <div class="trivia-url">https://whispering-ocean-65840.herokuapp.com/</div> -->
+        </div>
+        <!-- /.inner -->
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+        <button class="initate-countdown hotspot">initiate quiz</button>
+    </div>
+    <script>
+    var socket = io();
+    $(".initate-countdown").on("click", function() {
+        console.log("quiz button initiated")
+        socket.emit('adminPageTeamNames-initiateQuiz', "initiate quiz");
+    })
+    socket.on('adminPageTeamNames-initiateQuiz', function(teamNameJsonData) {
+        window.location.href = '/plane-race.html';
+        socket.emit("teamHomeWelcome", "redirect to quiz page")
+    })
+    var el1 = document.getElementById('server-time1');
+    socket.emit('adminPageTeamNames', "adminPageOpened");
+    socket.on('adminPageTeamNames', function(teamNameJsonData) {
+        console.log("json return", teamNameJsonData[3])
+        for (var teamId in teamNameJsonData) {
+            $("."+teamId).removeClass("hide")
+            $("."+teamId).find("h4").html(teamNameJsonData[teamId])
+            // var audio = new Audio('./sounds/woo.wav');
+            // audio.play();
+        }
+    });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../../scripts/app.js"></script>
+</body>
+
+</html>

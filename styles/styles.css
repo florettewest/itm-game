@@ -1,0 +1,2317 @@
+@charset "UTF-8";
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+code,
+del,
+dfn,
+em,
+img,
+q,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1.5;
+    background: white;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+    float: none !important;
+}
+
+table,
+th,
+td {
+    vertical-align: middle;
+}
+
+blockquote before,
+blockquote after,
+q before,
+q after {
+    content: '';
+}
+
+a img {
+    border: none;
+}
+
+b,
+i {
+    display: none;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+* {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+@font-face {
+    font-family: 'coolvetica';
+    src: url('../fonts/coolvetica.ttf');
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+    padding: 0 0 20px;
+}
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 80px;
+        padding: 0;
+    }
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 30px;
+    padding: 20px 0;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 22px;
+    padding: 20px 0;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 22px;
+    padding: 0 0 20px;
+    height: 50px;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 19px;
+    text-align: left;
+    line-height: 1;
+}
+h5 span {
+    color: #3fd9f0;
+}
+
+p.question {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.asterisc {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
+
+/***** Move 1 ***************/
+[data-anim='1'] {
+    -webkit-animation: move1 ease-in-out 0.5s;
+    animation: move1 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move1 {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(50px, 0);
+        transform: translate(50px, 0);
+    }
+}
+
+@keyframes move1 {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(50px, 0);
+        transform: translate(50px, 0);
+    }
+}
+
+/***** Move 2 ***************/
+[data-anim='2'] {
+    -webkit-animation: move2 ease-in-out 0.5s;
+    animation: move2 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move2 {
+    0% {
+        -webkit-transform: translate(50px, 0);
+        transform: translate(50px, 0);
+    }
+    100% {
+        -webkit-transform: translate(100px, 0);
+        transform: translate(100px, 0);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        -webkit-transform: translate(50px, 0);
+        transform: translate(50px, 0);
+    }
+    100% {
+        -webkit-transform: translate(100px, 0);
+        transform: translate(100px, 0);
+    }
+}
+
+/***** Move 3 ***************/
+[data-anim='3'] {
+    -webkit-animation: move3 ease-in-out 0.5s;
+    animation: move3 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move3 {
+    0% {
+        -webkit-transform: translate(100px, 0);
+        transform: translate(100px, 0);
+    }
+    100% {
+        -webkit-transform: translate(150px, 0);
+        transform: translate(150px, 0);
+    }
+}
+
+@keyframes move3 {
+    0% {
+        -webkit-transform: translate(100px, 0);
+        transform: translate(100px, 0);
+    }
+    100% {
+        -webkit-transform: translate(150px, 0);
+        transform: translate(150px, 0);
+    }
+}
+
+/***** Move 4 ***************/
+[data-anim='4'] {
+    -webkit-animation: move4 ease-in-out 0.5s;
+    animation: move4 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move4 {
+    0% {
+        -webkit-transform: translate(150px, 0);
+        transform: translate(150px, 0);
+    }
+    100% {
+        -webkit-transform: translate(200px, 0);
+        transform: translate(200px, 0);
+    }
+}
+
+@keyframes move4 {
+    0% {
+        -webkit-transform: translate(150px, 0);
+        transform: translate(150px, 0);
+    }
+    100% {
+        -webkit-transform: translate(200px, 0);
+        transform: translate(200px, 0);
+    }
+}
+
+/***** Move 5 ***************/
+[data-anim='5'] {
+    -webkit-animation: move5 ease-in-out 0.5s;
+    animation: move5 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move5 {
+    0% {
+        -webkit-transform: translate(200px, 0);
+        transform: translate(200px, 0);
+    }
+    100% {
+        -webkit-transform: translate(250px, 0);
+        transform: translate(250px, 0);
+    }
+}
+
+@keyframes move5 {
+    0% {
+        -webkit-transform: translate(200px, 0);
+        transform: translate(200px, 0);
+    }
+    100% {
+        -webkit-transform: translate(250px, 0);
+        transform: translate(250px, 0);
+    }
+}
+
+/***** Move 6 ***************/
+[data-anim='6'] {
+    -webkit-animation: move6 ease-in-out 0.5s;
+    animation: move6 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move6 {
+    0% {
+        -webkit-transform: translate(250px, 0);
+        transform: translate(250px, 0);
+    }
+    100% {
+        -webkit-transform: translate(300px, 0);
+        transform: translate(300px, 0);
+    }
+}
+
+@keyframes move6 {
+    0% {
+        -webkit-transform: translate(250px, 0);
+        transform: translate(250px, 0);
+    }
+    100% {
+        -webkit-transform: translate(300px, 0);
+        transform: translate(300px, 0);
+    }
+}
+
+/***** Move 7 ***************/
+[data-anim='7'] {
+    -webkit-animation: move7 ease-in-out 0.5s;
+    animation: move7 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move7 {
+    0% {
+        -webkit-transform: translate(300px, 0);
+        transform: translate(300px, 0);
+    }
+    100% {
+        -webkit-transform: translate(350px, 0);
+        transform: translate(350px, 0);
+    }
+}
+
+@keyframes move7 {
+    0% {
+        -webkit-transform: translate(300px, 0);
+        transform: translate(300px, 0);
+    }
+    100% {
+        -webkit-transform: translate(350px, 0);
+        transform: translate(350px, 0);
+    }
+}
+
+/***** Move 8 ***************/
+[data-anim='8'] {
+    -webkit-animation: move8 ease-in-out 0.5s;
+    animation: move8 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move8 {
+    0% {
+        -webkit-transform: translate(350px, 0);
+        transform: translate(350px, 0);
+    }
+    100% {
+        -webkit-transform: translate(400px, 0);
+        transform: translate(400px, 0);
+    }
+}
+
+@keyframes move8 {
+    0% {
+        -webkit-transform: translate(350px, 0);
+        transform: translate(350px, 0);
+    }
+    100% {
+        -webkit-transform: translate(400px, 0);
+        transform: translate(400px, 0);
+    }
+}
+
+/***** Move 9 ***************/
+[data-anim='9'] {
+    -webkit-animation: move9 ease-in-out 0.5s;
+    animation: move9 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move9 {
+    0% {
+        -webkit-transform: translate(400px, 0);
+        transform: translate(400px, 0);
+    }
+    100% {
+        -webkit-transform: translate(450px, 0);
+        transform: translate(450px, 0);
+    }
+}
+
+@keyframes move9 {
+    0% {
+        -webkit-transform: translate(400px, 0);
+        transform: translate(400px, 0);
+    }
+    100% {
+        -webkit-transform: translate(450px, 0);
+        transform: translate(450px, 0);
+    }
+}
+
+/***** Move 10 ***************/
+[data-anim='10'] {
+    -webkit-animation: move10 ease-in-out 0.5s;
+    animation: move10 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move10 {
+    0% {
+        -webkit-transform: translate(450px, 0);
+        transform: translate(450px, 0);
+    }
+    100% {
+        -webkit-transform: translate(500px, 0);
+        transform: translate(500px, 0);
+    }
+}
+
+@keyframes move10 {
+    0% {
+        -webkit-transform: translate(450px, 0);
+        transform: translate(450px, 0);
+    }
+    100% {
+        -webkit-transform: translate(500px, 0);
+        transform: translate(500px, 0);
+    }
+}
+
+/***** Move 11 ***************/
+[data-anim='11'] {
+    -webkit-animation: move11 ease-in-out 0.5s;
+    animation: move11 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move11 {
+    0% {
+        -webkit-transform: translate(500px, 0);
+        transform: translate(500px, 0);
+    }
+    100% {
+        -webkit-transform: translate(550px, 0);
+        transform: translate(550px, 0);
+    }
+}
+
+@keyframes move11 {
+    0% {
+        -webkit-transform: translate(500px, 0);
+        transform: translate(500px, 0);
+    }
+    100% {
+        -webkit-transform: translate(550px, 0);
+        transform: translate(550px, 0);
+    }
+}
+
+/***** Move 12 ***************/
+[data-anim='12'] {
+    -webkit-animation: move12 ease-in-out 0.5s;
+    animation: move12 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move12 {
+    0% {
+        -webkit-transform: translate(550px, 0);
+        transform: translate(550px, 0);
+    }
+    100% {
+        -webkit-transform: translate(600px, 0);
+        transform: translate(600px, 0);
+    }
+}
+
+@keyframes move12 {
+    0% {
+        -webkit-transform: translate(550px, 0);
+        transform: translate(550px, 0);
+    }
+    100% {
+        -webkit-transform: translate(600px, 0);
+        transform: translate(600px, 0);
+    }
+}
+
+/***** Move 13 ***************/
+[data-anim='13'] {
+    -webkit-animation: move13 ease-in-out 0.5s;
+    animation: move13 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move13 {
+    0% {
+        -webkit-transform: translate(600px, 0);
+        transform: translate(600px, 0);
+    }
+    100% {
+        -webkit-transform: translate(650px, 0);
+        transform: translate(650px, 0);
+    }
+}
+
+@keyframes move13 {
+    0% {
+        -webkit-transform: translate(600px, 0);
+        transform: translate(600px, 0);
+    }
+    100% {
+        -webkit-transform: translate(650px, 0);
+        transform: translate(650px, 0);
+    }
+}
+
+/***** Move 14 ***************/
+[data-anim='14'] {
+    -webkit-animation: move14 ease-in-out 0.5s;
+    animation: move14 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move14 {
+    0% {
+        -webkit-transform: translate(650px, 0);
+        transform: translate(650px, 0);
+    }
+    100% {
+        -webkit-transform: translate(700px, 0);
+        transform: translate(700px, 0);
+    }
+}
+
+@keyframes move14 {
+    0% {
+        -webkit-transform: translate(650px, 0);
+        transform: translate(650px, 0);
+    }
+    100% {
+        -webkit-transform: translate(700px, 0);
+        transform: translate(700px, 0);
+    }
+}
+
+/***** Move 15 ***************/
+[data-anim='15'] {
+    -webkit-animation: move15 ease-in-out 0.5s;
+    animation: move15 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move15 {
+    0% {
+        -webkit-transform: translate(700px, 0);
+        transform: translate(700px, 0);
+    }
+    100% {
+        -webkit-transform: translate(750px, 0);
+        transform: translate(750px, 0);
+    }
+}
+
+@keyframes move15 {
+    0% {
+        -webkit-transform: translate(700px, 0);
+        transform: translate(700px, 0);
+    }
+    100% {
+        -webkit-transform: translate(750px, 0);
+        transform: translate(750px, 0);
+    }
+}
+
+/***** Move 16 ***************/
+[data-anim='16'] {
+    -webkit-animation: move16 ease-in-out 0.5s;
+    animation: move16 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move16 {
+    0% {
+        -webkit-transform: translate(750px, 0);
+        transform: translate(750px, 0);
+    }
+    100% {
+        -webkit-transform: translate(800px, 0);
+        transform: translate(800px, 0);
+    }
+}
+
+@keyframes move16 {
+    0% {
+        -webkit-transform: translate(750px, 0);
+        transform: translate(750px, 0);
+    }
+    100% {
+        -webkit-transform: translate(800px, 0);
+        transform: translate(800px, 0);
+    }
+}
+
+/***** Move 17 ***************/
+[data-anim='17'] {
+    -webkit-animation: move17 ease-in-out 0.5s;
+    animation: move17 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move17 {
+    0% {
+        -webkit-transform: translate(800px, 0);
+        transform: translate(800px, 0);
+    }
+    100% {
+        -webkit-transform: translate(850px, 0);
+        transform: translate(850px, 0);
+    }
+}
+
+@keyframes move17 {
+    0% {
+        -webkit-transform: translate(800px, 0);
+        transform: translate(800px, 0);
+    }
+    100% {
+        -webkit-transform: translate(850px, 0);
+        transform: translate(850px, 0);
+    }
+}
+
+/***** Move 18 ***************/
+[data-anim='18'] {
+    -webkit-animation: move18 ease-in-out 0.5s;
+    animation: move18 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move18 {
+    0% {
+        -webkit-transform: translate(850px, 0);
+        transform: translate(850px, 0);
+    }
+    100% {
+        -webkit-transform: translate(900px, 0);
+        transform: translate(900px, 0);
+    }
+}
+
+@keyframes move18 {
+    0% {
+        -webkit-transform: translate(850px, 0);
+        transform: translate(850px, 0);
+    }
+    100% {
+        -webkit-transform: translate(900px, 0);
+        transform: translate(900px, 0);
+    }
+}
+
+/***** Move 19 ***************/
+[data-anim='19'] {
+    -webkit-animation: move19 ease-in-out 0.5s;
+    animation: move19 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move19 {
+    0% {
+        -webkit-transform: translate(900px, 0);
+        transform: translate(900px, 0);
+    }
+    100% {
+        -webkit-transform: translate(950px, 0);
+        transform: translate(950px, 0);
+    }
+}
+
+@keyframes move19 {
+    0% {
+        -webkit-transform: translate(900px, 0);
+        transform: translate(900px, 0);
+    }
+    100% {
+        -webkit-transform: translate(950px, 0);
+        transform: translate(950px, 0);
+    }
+}
+
+/***** Move 20 ***************/
+[data-anim='20'] {
+    -webkit-animation: move20 ease-in-out 0.5s;
+    animation: move20 ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes move20 {
+    0% {
+        -webkit-transform: translate(950px, 0);
+        transform: translate(950px, 0);
+    }
+    100% {
+        -webkit-transform: translate(1000px, 0);
+        transform: translate(1000px, 0);
+    }
+}
+
+@keyframes move20 {
+    0% {
+        -webkit-transform: translate(950px, 0);
+        transform: translate(950px, 0);
+    }
+    100% {
+        -webkit-transform: translate(1000px, 0);
+        transform: translate(1000px, 0);
+    }
+}
+
+/***** Finish line ***************/
+[data-anim='finish'] {
+    -webkit-animation: finish ease-in-out 0.5s;
+    animation: finish ease-in-out 0.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@-webkit-keyframes finish {
+    0% {
+        -webkit-transform: translate(1000px, 0);
+        transform: translate(1000px, 0);
+    }
+    100% {
+        -webkit-transform: translate(1500px, -20px);
+        transform: translate(1500px, -20px);
+    }
+}
+
+@keyframes finish {
+    0% {
+        -webkit-transform: translate(1000px, 0);
+        transform: translate(1000px, 0);
+    }
+    100% {
+        -webkit-transform: translate(1500px, -20px);
+        transform: translate(1500px, -20px);
+    }
+}
+
+.rank.active {
+    -webkit-animation: planeRanking ease-in-out 0.3s;
+    animation: planeRanking ease-in-out 0.3s;
+    -webkit-animation-iteration-count: 10;
+    animation-iteration-count: 10;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes planeRanking {
+    0% {
+        color: white;
+    }
+    50% {
+        color: tomato;
+    }
+    100% {
+        color: #030a38;
+    }
+}
+
+@keyframes planeRanking {
+    0% {
+        color: white;
+    }
+    50% {
+        color: tomato;
+    }
+    100% {
+        color: #030a38;
+    }
+}
+
+.wrong {
+    -webkit-animation: shake-x 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation: shake-x 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+@-webkit-keyframes shake-x {
+    10%,
+    90% {
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
+    }
+    20%,
+    80% {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
+    }
+    40%,
+    60% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+    }
+}
+
+@keyframes shake-x {
+    10%,
+    90% {
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
+    }
+    20%,
+    80% {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
+    }
+    40%,
+    60% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+    }
+}
+
+[data-bump='on'] {
+    -webkit-animation: shake-y 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation: shake-y 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+@-webkit-keyframes shake-y {
+    10%,
+    90% {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+    20%,
+    80% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+    40%,
+    60% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+}
+
+@keyframes shake-y {
+    10%,
+    90% {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+    20%,
+    80% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+    40%,
+    60% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+}
+
+body {
+    font-size: 20px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.4;
+}
+
+.v-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+sup {
+    font-size: 50%;
+    vertical-align: super;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    border: 1px solid white;
+    padding: 20px;
+}
+
+.v-center,
+h5,
+.inner {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.hide {
+    display: none;
+}
+
+.index__list {
+    float: left;
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+}
+
+.logo {
+    width: 312px;
+    margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+    .logo {
+        width: 400px;
+    }
+}
+
+.team-name .logo {
+    width: 312px;
+}
+
+.team-name {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2.quizHeader {
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 27px;
+    margin: 0 0 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #a2a2a2;
+}
+
+h2.quizScore {
+    font-size: 25px;
+}
+
+.question-group label {
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    min-height: 50px;
+    margin-bottom: 10px;
+    padding: 11px 35px 11px 11px;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.team-name label {
+    margin: 0 0 20px;
+    display: block;
+    font-size: 26px;
+}
+
+.team-name input {
+    height: 50px;
+    border: none;
+    background: white;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #030a38;
+    padding: 0 11px;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 5px;
+}
+.team-name input[type='submit'] {
+    background: #3fd9f0;
+    color: white;
+}
+
+input.answer[type='radio'] {
+    margin: 0;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.gradient {
+    height: 100vh;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000256+1,000484+100 */
+    background: #000033;
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #000033 1%, #103b4d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(1%, #000033),
+        to(#103b4d)
+    );
+    background: linear-gradient(to bottom, #000033 1%, #103b4d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000033', endColorstr='#103b4d',GradientType=0 );
+    /* IE6-9 */
+}
+
+.stats-page .gradient {
+    height: 100%;
+}
+
+.inner {
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    background: white;
+    width: 100%;
+    font-size: inherit;
+    color: black;
+}
+
+.bg-sky {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.bg-sky-quiz {
+    width: 256px;
+    position: relative;
+    left: 20px;
+}
+
+.bg-sky:before,
+.bg-sky-quiz:before {
+    content: '';
+    position: absolute;
+    width: 256px;
+    height: 88px;
+    bottom: 0;
+    left: 0;
+    background: url(../images/Clouds.png) no-repeat;
+}
+
+.team-home__img {
+    width: 170px;
+    margin-top: 20px;
+}
+
+.team-home__plane {
+    width: 170px;
+    height: 62px;
+    margin: 20px auto 0;
+    background-size: 170px 62px !important;
+}
+.team-home__plane.team-a {
+    background: url(../images/planes/plane-turquoise.gif) no-repeat;
+}
+.team-home__plane.team-b {
+    background: url(../images/planes/plane-red.gif) no-repeat;
+}
+.team-home__plane.team-c {
+    background: url(../images/planes/plane-green.gif) no-repeat;
+}
+.team-home__plane.team-d {
+    background: url(../images/planes/plane-orange.gif) no-repeat;
+}
+.team-home__plane.team-e {
+    background: url(../images/planes/plane-purple.gif) no-repeat;
+}
+.team-home__plane.team-f {
+    background: url(../images/planes/plane-yellow.gif) no-repeat;
+}
+.team-home__plane.team-g {
+    background: url(../images/planes/plane-blue.gif) no-repeat;
+}
+.team-home__plane.team-h {
+    background: url(../images/planes/plane-white.gif) no-repeat;
+}
+.team-home__plane.team-i {
+    background: url(../images/planes/plane-brown.gif) no-repeat;
+}
+.team-home__plane.team-j {
+    background: url(../images/planes/plane-grey.gif) no-repeat;
+}
+.team-home__plane.team-k {
+    background: url(../images/planes/plane-pink.gif) no-repeat;
+}
+.team-home__plane.team-l {
+    background: url(../images/planes/plane-violet.gif) no-repeat;
+}
+
+.countdown {
+    background: url(../images/countdown/bullseye.png) no-repeat;
+    width: 220px;
+    height: 220px;
+    background-size: 220px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+    .countdown {
+        width: 525px;
+        height: 525px;
+        background-size: 100%;
+    }
+}
+
+.countdown-number {
+    width: 220px;
+    height: 220px;
+}
+@media screen and (min-width: 768px) {
+    .countdown-number {
+        width: 525px;
+        height: 525px;
+    }
+}
+
+.bg-wrap-quiz {
+    width: 100%;
+    height: 100vh;
+    background: url(../images/clouds/clouds-mobile.png) no-repeat bottom center;
+    background-size: cover;
+}
+
+.wrap-quiz {
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.quiz-plane {
+    position: absolute;
+    width: 200px;
+    height: 72px;
+    background-size: 200px !important;
+    top: -70px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.quiz-plane.team-a {
+    background: url(../images/planes/plane-turquoise.gif) no-repeat;
+}
+.quiz-plane.team-b {
+    background: url(../images/planes/plane-red.gif) no-repeat;
+}
+.quiz-plane.team-c {
+    background: url(../images/planes/plane-green.gif) no-repeat;
+}
+.quiz-plane.team-d {
+    background: url(../images/planes/plane-orange.gif) no-repeat;
+}
+.quiz-plane.team-e {
+    background: url(../images/planes/plane-purple.gif) no-repeat;
+}
+.quiz-plane.team-f {
+    background: url(../images/planes/plane-yellow.gif) no-repeat;
+}
+.quiz-plane.team-g {
+    background: url(../images/planes/plane-blue.gif) no-repeat;
+}
+.quiz-plane.team-h {
+    background: url(../images/planes/plane-white.gif) no-repeat;
+}
+.quiz-plane.team-i {
+    background: url(../images/planes/plane-brown.gif) no-repeat;
+}
+.quiz-plane.team-j {
+    background: url(../images/planes/plane-grey.gif) no-repeat;
+}
+.quiz-plane.team-k {
+    background: url(../images/planes/plane-pink.gif) no-repeat;
+}
+.quiz-plane.team-l {
+    background: url(../images/planes/plane-violet.gif) no-repeat;
+}
+
+.quiz-team-name {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    line-height: 1;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(11, 42, 69, 0)),
+        color-stop(1%, rgba(11, 42, 69, 0.01)),
+        color-stop(18%, rgba(11, 42, 69, 0.16)),
+        to(rgba(11, 42, 69, 0.9))
+    );
+    background: -webkit-linear-gradient(
+        top,
+        rgba(11, 42, 69, 0) 0%,
+        rgba(11, 42, 69, 0.01) 1%,
+        rgba(11, 42, 69, 0.16) 18%,
+        rgba(11, 42, 69, 0.9) 100%
+    );
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 42, 69, 0) 0%,
+        rgba(11, 42, 69, 0.01) 1%,
+        rgba(11, 42, 69, 0.16) 18%,
+        rgba(11, 42, 69, 0.9) 100%
+    );
+}
+
+.team__list__link {
+    margin-bottom: 20px;
+}
+
+.col {
+    width: 100%;
+    position: absolute;
+    padding: 20px;
+}
+
+.col.active,
+.wrap-result.active,
+.active.wrap-gameover {
+    left: 0;
+    -webkit-transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out;
+}
+
+.col.next {
+    left: 100%;
+}
+
+.col.past {
+    left: -100%;
+    -webkit-transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out;
+}
+
+.correct {
+    border-color: LightGreen !important;
+}
+
+.correct:before {
+    content: '✓';
+    position: absolute;
+    color: LightGreen;
+    right: 11px;
+    font-size: 30px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.wrong {
+    border-color: tomato !important;
+}
+
+.wrong:before {
+    content: '╳';
+    position: absolute;
+    color: tomato;
+    font-size: 22px;
+    right: 11px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+.time-span {
+    display: none;
+}
+
+.wrap-result,
+.wrap-gameover {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    left: 100%;
+    text-align: center;
+    padding: 20px;
+    height: 300px;
+}
+
+.welcome-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.welcome {
+    float: left;
+    width: 33.3333333%;
+    padding: 10px 20px;
+}
+
+.bg-clouds {
+    width: 100%;
+    height: 85px;
+    border-bottom: 5px dotted rgba(138, 138, 220, 0.18);
+}
+
+.plane-anim__btn {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+}
+
+.plane-bump__btn {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    top: 23px;
+}
+
+.wrap-race {
+    width: 1390px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.finish-line {
+    width: 315px;
+    height: 700px;
+    background: url(../images/clouds/finish-line.png) no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+    z-index: 2;
+}
+
+.progress-group {
+    position: relative;
+    z-index: 1;
+    height: 56px;
+    padding: 15px 0;
+}
+
+.race-team-name {
+    float: left;
+    width: 170px;
+    padding-left: 50px;
+    height: 40px;
+}
+
+.progress {
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    width: 1000px;
+    height: 40px;
+}
+
+.progress .plane {
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+}
+
+.progress .plane:before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 2000px;
+    background: rgba(255, 255, 255, 0.1);
+    left: -1975px;
+    top: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mobile canvas {
+    width: 256px;
+    height: 454px;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    margin: auto;
+    right: 0;
+}
+
+.rank {
+    opacity: 0;
+    font-size: 36px;
+    position: absolute;
+    font-weight: bold;
+    left: -12px;
+    top: 9px;
+    -webkit-transform: scale(8);
+    -ms-transform: scale(8);
+    transform: scale(8);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.rank.active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.hotspot {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-indent: -9999px;
+}
+
+.stats__table {
+    padding: 20px 0;
+}
+
+.stats__row {
+    zoom: 1;
+}
+.stats__row:before,
+.stats__row:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.stats__row:after {
+    clear: both;
+}
+
+.stats__col-team {
+    float: left;
+    width: 20%;
+    text-align: left;
+    padding: 3px 0;
+    height: 34px;
+    border-right: 2px solid white;
+}
+
+.team-title {
+    border: none;
+}
+
+.stats__col-bar {
+    float: left;
+    width: 70%;
+}
+
+.stats__col-rank {
+    float: left;
+    width: 10%;
+    padding: 5px 0;
+    height: 34px;
+}
+
+.stats__bar {
+    height: 24px;
+    margin: 5px 0;
+    position: relative;
+    text-align: left;
+}
+.team-a .stats__bar {
+    background-color: #8ceded;
+    width: 58%;
+}
+.time-spent .team-a .stats__bar {
+    width: 71%;
+}
+.team-b .stats__bar {
+    background-color: #ef9cac;
+    width: 43%;
+}
+.time-spent .team-b .stats__bar {
+    width: 56%;
+}
+.team-c .stats__bar {
+    background-color: #b2edc6;
+    width: 67%;
+}
+.time-spent .team-c .stats__bar {
+    width: 92%;
+}
+.team-d .stats__bar {
+    background-color: #f2b975;
+}
+.team-e .stats__bar {
+    background-color: #ba9bc9;
+}
+.team-f .stats__bar {
+    background-color: #f4e67d;
+}
+.team-g .stats__bar {
+    background-color: #8bbee8;
+}
+.team-h .stats__bar {
+    background-color: #ffffff;
+}
+
+.stats__bar-percent {
+    position: absolute;
+    right: -42px;
+}
+
+.wrap-gameover {
+    left: 100%;
+}
+.wrap-gameover.active {
+    left: 0;
+}
+
+.plane-explosion {
+    background: url(../images/boom.gif) no-repeat;
+    width: 200px;
+    height: 200px;
+    top: -194px;
+    background-size: 200px;
+}
+
+.stars {
+    position: absolute;
+    width: 2636px;
+    height: 100%;
+    background: url(../images/clouds/stars.png) repeat-x;
+}
+
+.cloud1 {
+    background: url(../images/clouds/clouds-1.png) repeat-x;
+    width: 2800px;
+    height: 110px;
+    position: absolute;
+    bottom: 0;
+}
+
+.cloud2 {
+    background: url(../images/clouds/clouds-2.png) repeat-x;
+    width: 2636px;
+    height: 145px;
+    position: absolute;
+    bottom: 0;
+}
+
+.cloud3 {
+    background: url(../images/clouds/clouds-3.png) repeat-x;
+    width: 2800px;
+    height: 235px;
+    position: absolute;
+    bottom: 0;
+}
+
+.welcome .plane {
+    width: 110px;
+    height: 45px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.smoke img {
+    width: 50%;
+    position: absolute;
+    bottom: 4px;
+    left: -50px;
+}
+
+.team-a .plane {
+    background: url(../images/planes/plane-turquoise.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-b .plane {
+    background: url(../images/planes/plane-red.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-c .plane {
+    background: url(../images/planes/plane-green.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-d .plane {
+    background: url(../images/planes/plane-orange.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-e .plane {
+    background: url(../images/planes/plane-purple.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-f .plane {
+    background: url(../images/planes/plane-yellow.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-g .plane {
+    background: url(../images/planes/plane-blue.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-h .plane {
+    background: url(../images/planes/plane-white.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-i .plane {
+    background: url(../images/planes/plane-brown.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-j .plane {
+    background: url(../images/planes/plane-grey.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-k .plane {
+    background: url(../images/planes/plane-pink.gif) no-repeat;
+    background-size: 110px;
+}
+
+.team-l .plane {
+    background: url(../images/planes/plane-violet.gif) no-repeat;
+    background-size: 110px;
+}
+
+/**************************
+***************************
+***************************
+***************************
+        HOT FIXES
+***************************
+***************************
+***************************
+**************************/
+
+.trivia-url {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 44px;
+    bottom: 40px;
+    display: block;
+}
+
+.stats__col-team {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 5px;
+}
+
+.stats__bar-percent {
+    left: calc(100% + 5px);
+}
+
+.stats__col-bar {
+    width: 68%;
+}
+
+.stats__col-rank {
+    width: 12%;
+}
+
+.stats__table div:first-child {
+    padding-bottom: 20px;
+}
+
+.quiz-plane.plane-explosion {
+    background: url(../images/boom.gif) no-repeat;
+    width: 200px;
+    height: 200px;
+    top: -194px;
+    background-size: 200px;
+}
+
+/**************************
+***************************
+***************************
+***************************
+      Risk Trivia CSS
+***************************
+***************************
+***************************
+**************************/
+
+.stats-page p.question {
+    float: left;
+    margin: 0;
+    padding: 7px 10px;
+    font-size: 18px;
+}
+
+.stats-page label {
+    float: left;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+    font-size: 18px;
+    padding: 7px 10px;
+}
+
+.stats-page label.value_0 {
+    display: none;
+}
+
+.stats-page .question-group {
+    float: left;
+    padding: 0;
+    width: 10%;
+    text-align: center;
+}
+
+.stats-page__wrap-quiz {
+    width: 100%;
+    padding: 0 50px 50px;
+}
+
+.stats-page__wrap-quiz li:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.team-correct-total,
+.team-correct-percentage {
+    font-size: 18px;
+    text-align: center;
+}
+
+.stats-page__table-title {
+    background: #00021f;
+    width: 100%;
+    padding: 5px 50px;
+}
+
+.stats-page__table-title li {
+    float: left;
+    font-size: 20px;
+}
+
+.stats-page__table-title li:nth-child(1) {
+    width: 60%;
+    padding-left: 10px;
+}
+
+.stats-page__table-title li:nth-child(2) {
+    width: 10%;
+    text-align: center;
+}
+
+.stats-page__table-title li:nth-child(3),
+.stats-page__table-title li:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+.team-correct-percentage.warn {
+    position: relative;
+}
+
+.team-correct-percentage.warn:before {
+    content: '⚠️';
+    position: absolute;
+    right: 11px;
+    top: 10px;
+    font-size: 13px;
+}
+
+.finish-line {
+    display: none;
+}
+
+.table__wrap {
+    width: 100%;
+    padding: 0 50px 50px;
+}
+
+.table__wrap td,
+.table__wrap td {
+    border: none;
+    padding: 0;
+}
+
+.table__wrap th {
+    background: #00021f;
+    padding: 7px 10px;
+}
+
+.table__wrap td {
+    vertical-align: middle;
+    padding: 7px 10px;
+    font-size: 18px;
+}
+
+.table__wrap tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.correct__ans {
+    text-align: center;
+}
+
+.export-btn {
+    display: inline-block;
+    border: none;
+    background: #3fd9f0;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 12px 30px;
+    width: auto;
+    margin: 20px auto;
+    float: right;
+}
+
+.credits {
+    font-size: 20px;
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+}
+
+.body-splash .credits {
+    font-size: 16px;
+    top: 174px;
+}
+
+.game-title {
+    font-size: 64px;
+}
+
+.body-splash .game-title {
+    font-size: 50px;
+    line-height: 1;
+}
+
+.hotspot:hover {
+    text-indent: 0;
+    color: white;
+}
+
+.lds-dual-ring {
+    display: none;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+}
+.lds-dual-ring:after {
+    content: ' ';
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.lds-team-choice {
+    top: 50px;
+    left: 40px;
+}
+
+.quiz-finished .plane:after {
+    content: '\2690';
+    position: absolute;
+    right: 18px;
+    font-size: 28px;
+}
+
+.hotspot-load-team-choice {
+    top: 0;
+    left: 0;
+}

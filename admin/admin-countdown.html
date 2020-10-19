@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Countdown</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body class="anime-on">
+    <div class="wrapper gradient">
+        <div class="stars"></div>
+        <!-- page content -->
+        <div class="inner">
+            <div class="countdown">
+                <img class="countdown-number" src="images/countdown/number5.png" />
+                <img class="countdown-number" src="images/countdown/number4.png" />
+                <img class="countdown-number" src="images/countdown/number3.png" />
+                <img class="countdown-number" src="images/countdown/number2.png" />
+                <img class="countdown-number" src="images/countdown/number1.png" />
+            </div>
+        </div>
+        <!-- /.inner -->
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+    </div>
+    <!-- /.wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+    var counter = 5;
+    var socket = io();
+    setInterval(function() {
+        counter--;
+        if (counter >= 1) {
+            $('.countdown-number:first').remove()
+        }
+        if (counter === 0) {
+            clearInterval(counter);
+            if (window.location.href.indexOf('countdown') > -1) {
+                //window.location.href = '/quiz.html';
+            }
+            if (window.location.href.indexOf('countdown-main') > -1) {
+                window.location.href = '/plane-race.html';
+                socket.emit("teamHomeWelcome", "redirect to quiz page")
+            }
+        }
+    }, 1000);
+    </script>
+</body>
+
+</html>

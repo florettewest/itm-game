@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team statistics</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
+</head>
+
+<body class="stats-page">
+    <div class="gradient">
+
+        <!-- page content -->
+        <div class="table__wrap clearfix">
+            <table id="RiskTriviaStats">
+                <tr>
+                    <th style="width: 60%;">Question</th>
+                    <th style="width: 10%; text-align: center;">Answer</th>
+                    <th style="width: 15%; text-align: center;">Correct answers
+                        <br>(
+                        <span class="n0-participants"></span> participants )</th>
+                    <th style="width: 15%; text-align: center;">Success rate</th>
+                </tr>
+            </table>
+            <a href="#" id="js-export-btn" class="export-btn">Export</a>
+        </div>
+    </div>
+    <!-- /.wrapper -->
+    <script type="text/javascript">
+
+    // Create questions
+    var finalArray = []
+    var totalQues = 0
+    $.getJSON("scripts/questions.json", function (data) {
+        $.each(data.questions, function (index, questions) {
+            totalQues = data.questions.length
+            index++;
+            var html = '<td>';
+            $.each(questions.options, function (i, option) {
+                i++;
+                html += ('<div class="value_' + option.result +' correct__ans">' + option.answer + '</div>');
+
+            });
+            html += '</td>'
+
+            var questionList = ('<tr>' + '<td>' + questions.question + '</td>' + html + '<td><div class="addQuote team-correct-total q' + index + '"></div></td><td><div class="team-correct-percentage p-q' + index + '"></div></td></tr>');
+            $('#RiskTriviaStats').append(questionList);
+            $('.value_0').remove();
+
+        });
+    });// Create question
+
+    var socket = io();
+    socket.emit('adminStats', "adminStats");
+    socket.on('adminStats', function(teamNameJsonData) {
+        console.log('This is the admin data =====> ' , teamNameJsonData)
+        //bar width calculations
+        var NumberOfTeams = teamNameJsonData['teamData'].length
+        var overAllResultsArray = []
+        $.each(teamNameJsonData['teamData'] , function(index , value){
+            for (var i in value) {
+                var tempVal = value[i]
+                if(value[i]['answerStatus'] == "correct"){
+                    overAllResultsArray.push(value[i])
+                }
+            }
+        })
+
+
+        for(var i =1 ; i<=totalQues ; i++){
+            var quesNumer = "q"+i
+            var tmpObj = {}
+            var count = 0
+            $.each(overAllResultsArray , function(index , value){
+                if(value['questionNo'] == quesNumer){
+                    count = count + 1
+                    tmpObj[quesNumer] = count
+                }else {
+                    tmpObj[quesNumer] = count
+                }
+            })
+            finalArray.push(tmpObj)
+        }
+        console.log('These are the correct answer ====> ' , finalArray)
+
+        $.each(finalArray , function(index , value){
+            for (var i in value){
+                // $('.' + i).html(value[i] + ' out of ' + NumberOfTeams)
+                $('.' + i).html(value[i] + '/' + NumberOfTeams)
+                // $('.'+i).html(value[i])
+            }
+            for (var i in value) {
+                var percentage = value[i] * 100 / NumberOfTeams;
+                if (percentage <= 50) {
+                    $('.p-' + i).html(Math.floor(percentage) + '%').addClass('warn');
+                } else {
+                    $('.p-' + i).html(Math.floor(percentage) + '%');
+                }
+            }
+        })
+
+        // Populate number of participants in the title
+        $('.n0-participants').html(NumberOfTeams);
+
+        // for (var index in teamNameJsonData.planeData.teamDetails) {
+        //     var teamVal = teamNameJsonData.planeData.teamDetails[index]
+        //     var teamEle = $(".success_rate").find("." + teamVal["teamId"])
+        //     teamEle.removeClass("hide")
+        //     teamEle.find(".stats__col-team").text(teamVal["teamName"])
+        //     var totalPercentage = 0;
+        //     if(teamVal["totalQuestionsAnswered"] !=0){
+        //         totalPercentage = teamVal["noOfAnsCorrect"] / teamVal["totalQuestionsAnswered"]  * 100;
+        //     }
+        //     teamEle.find(".stats__bar").css("width", totalPercentage + "%")
+        //     teamEle.find(".stats__bar-percent").text(Math.round(totalPercentage) + "%")
+        //     teamEle.attr("id", teamVal["teamId"])
+        // }
+
+        // var highestTimeTaken = 0;
+        // for (var i = 0; i < teamNameJsonData.planeData.teamDetails.length; i++) {
+        //     var value = teamNameJsonData.planeData.teamDetails[i]
+        //     var teamAverage = value["totalTimeTaken"] / value["totalQuestionsAnswered"]
+        //     if (teamAverage > highestTimeTaken) {
+        //         highestTimeTaken = teamAverage;
+        //     }
+        // }
+
+        // for (var index in teamNameJsonData.planeData.teamDetails) {
+        //     var teamVal = teamNameJsonData.planeData.teamDetails[index]
+        //     var teamEle = $(".time-spent").find("." + teamVal["teamId"])
+        //     teamEle.removeClass("hide")
+        //     teamEle.find(".stats__col-team").text(teamVal["teamName"])
+        //     var totalTimePercentage = teamVal["totalTimeTaken"] / (highestTimeTaken * teamVal["totalQuestionsAnswered"])  * 100;
+        //     teamEle.find(".stats__bar").css("width", totalTimePercentage + "%")
+        //     teamEle.find(".stats__bar-percent").text((teamVal["totalTimeTaken"] /(teamVal["totalQuestionsAnswered"] *1000)).toFixed(1) + "s")
+        //     teamEle.attr("id", teamVal["teamId"])
+        // }
+
+        // var ranks = JSON.parse(localStorage.getItem("teamsRank"))
+        // for (var teamId in ranks) {
+        //     $("."+teamId).find(".stats__col-rank").text(ranks[teamId])
+        // }
+    });
+
+
+
+
+    function exportTableToCSV($table, filename) {
+
+        $('.addQuote').prepend(" ");
+
+        var $rows = $table.find('tr:has(td),tr:has(th)'),
+
+            // Temporary delimiter characters unlikely to be typed by keyboard
+            // This is to avoid accidentally splitting the actual contents
+            tmpColDelim = String.fromCharCode(11), // vertical tab character
+            tmpRowDelim = String.fromCharCode(0), // null character
+
+            // actual delimiter characters for CSV format
+            colDelim = '","',
+            rowDelim = '"\r\n"',
+
+            // Grab text from table into CSV formatted string
+            csv = '"' + $rows.map(function (i, row) {
+                var $row = $(row), $cols = $row.find('td,th');
+
+
+
+                return $cols.map(function (j, col) {
+                    var $col = $(col), text = $col.text();
+                    return text.replace(/"/g, '""'); // escape double quotes
+
+
+                }).get().join(tmpColDelim);
+
+            }).get().join(tmpRowDelim)
+                .split(tmpRowDelim).join(rowDelim)
+                .split(tmpColDelim).join(colDelim) + '"',
+
+
+
+            // Data URI
+            csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
+
+        console.log(csv);
+
+        if (window.navigator.msSaveBlob) { // IE 10+
+            //alert('IE' + csv);
+            window.navigator.msSaveOrOpenBlob(new Blob([csv], { type: "text/plain;charset=utf-8;" }), "csvname.csv")
+        }
+        else {
+            $(this).attr({ 'download': filename, 'href': csvData, 'target': '_blank' });
+        }
+    }
+
+    // This must be a hyperlink
+    $("#js-export-btn").on('click', function (event) {
+
+        exportTableToCSV.apply(this, [$('#RiskTriviaStats'), 'BBO-results-stats.csv']);
+
+        // IF CSV, don't do event.preventDefault() or return false
+        // We actually need this to be a typical hyperlink
+    });
+    </script>
+</body>
+
+</html>

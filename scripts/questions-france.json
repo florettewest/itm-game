@@ -1,0 +1,174 @@
+{
+    "questions": [
+        {
+            "question": "1. When was the first Concorde flight?",
+            "options": [
+                {
+                    "answer": 1956,
+                    "result": 0
+                },
+                {
+                    "answer": 1969,
+                    "result": 1
+                },
+                {
+                    "answer": 1978,
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "2. Which French king built the palace of Versailles?",
+            "options": [
+                {
+                    "answer": "Louis XIV",
+                    "result": 1
+                },
+                {
+                    "answer": "Louis XVI",
+                    "result": 0
+                },
+                {
+                    "answer": "Henri IV",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "3. What is illegal in France?",
+            "options": [
+                {
+                    "answer": "To marry a dead person",
+                    "result": 0
+                },
+                {
+                    "answer": "To write a cheque on toilet paper",
+                    "result": 0
+                },
+                {
+                    "answer": "To name a pig \"Napoleon\"",
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "4. What is the national animal of France?",
+            "options": [
+                {
+                    "answer": "The snail",
+                    "result": 0
+                },
+                {
+                    "answer": "The rooster",
+                    "result": 1
+                },
+                {
+                    "answer": "The frog",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "5. The \"Paris Syndrome\" is a depression caused by",
+            "options": [
+                {
+                    "answer": "The deception about the city not living up to romantic expectations",
+                    "result": 1
+                },
+                {
+                    "answer": "The lack of opportunity to experience a \"French Kiss\" in front of the Eiffel Tower",
+                    "result": 0
+                },
+                {
+                    "answer": "Not being able to take a selfie next to the Mona Lisa painting",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "6. How much was the most expensive bottle of wine ever sold at auction?",
+            "options": [
+                {
+                    "answer": "$103,000",
+                    "result": 0
+                },
+                {
+                    "answer": "$558,000",
+                    "result": 1
+                },
+                {
+                    "answer": "$1,275,000",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "7. What is the most common prank on french April Fool's Day?",
+            "options": [
+                {
+                    "answer": "Spit in someone's drink",
+                    "result": 0
+                },
+                {
+                    "answer": "Put itching powder in someone's underwear",
+                    "result": 0
+                },
+                {
+                    "answer": "Stick a fish on someone's back",
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "8. Which french cheese is the stinkiest?",
+            "options": [
+                {
+                    "answer": "Epoisses de Bourgogne",
+                    "result": 0
+                },
+                {
+                    "answer": "Roquefort",
+                    "result": 0
+                },
+                {
+                    "answer": "Vieux-Boulogne",
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "question": "9. What method of communication is still in use by the french army?",
+            "options": [
+                {
+                    "answer": "Carrier pigeons",
+                    "result": 1
+                },
+                {
+                    "answer": "Smoke signals",
+                    "result": 0
+                },
+                {
+                    "answer": "Hand written letters delivered by horse",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "question": "10. What is believed to bring \"bad luck\" in France?",
+            "options": [
+                {
+                    "answer": "Walk on a dog's poo",
+                    "result": 0
+                },
+                {
+                    "answer": "Touch the red pompom from a sailor's hat",
+                    "result": 0
+                },
+                {
+                    "answer": "Place a baguette upside down on the table",
+                    "result": 1
+                }
+            ]
+        }
+    ]
+}

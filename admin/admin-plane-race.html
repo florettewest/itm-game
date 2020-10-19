@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Plane race</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700"
+            rel="stylesheet"
+        />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <script src="./socket.io/socket.io.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper gradient">
+            <div class="stars"></div>
+            <!-- page content -->
+            <div class="inner">
+                <!-- <button class="plane-anim__btn">Correct answer</button> -->
+                <!-- <button class="plane-anim__btn">click me</button> -->
+                <div class="wrap-race">
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-a">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-b">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-c">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-d">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-e">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-f">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-g">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-h">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-i">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-j">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-k">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-group hide clearfix">
+                        <div class="rank"></div>
+                        <div class="race-team-name">
+                            <h5></h5>
+                        </div>
+                        <div class="progress team-l">
+                            <div class="plane" data-anim="0" data-bump="off">
+                                <div class="smoke">
+                                    <img
+                                        src="../images/planes/blank-smoke.png"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.wrap-race -->
+            </div>
+            <!-- /.inner-main -->
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+            <div class="finish-line"></div>
+            <button class="hotspot hotspot-gotostats">Show statistics</button>
+            <button class="hotspot hotspot-load-team-choice"></button>
+            <div class="lds-dual-ring lds-team-choice"></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script type="text/javascript">
+            var socket = io();
+            socket.emit('adminPlaneRaceOnLoad', 'hello');
+            socket.on('adminPlaneRaceOnLoad', function(teamNameJsonData) {
+                console.log('adminPlaneRaceOnLoad', teamNameJsonData);
+                var count = 0,
+                    teamNames = [];
+                for (var index in teamNameJsonData.teamDetails) {
+                    var teamVal = teamNameJsonData.teamDetails[index];
+                    var teamEle = $('.' + teamVal['teamId']).parent(
+                        '.progress-group'
+                    );
+                    teamEle.removeClass('hide');
+                    teamEle.attr('id', teamVal['teamId']);
+                    teamEle.find('h5').html(teamVal['teamName']);
+                    teamEle
+                        .find('.plane')
+                        .attr('data-anim', teamVal['noOfAnsCorrect']);
+                }
+            });
+
+            socket.on('teamResultsAdminPlaneMove', function(teamResult) {
+                console.log('socketemmtited', teamResult);
+                if (teamResult['answerStatus'] == 'correct') {
+                    var ele = $('#' + teamResult['teamId']).find('.plane');
+                    var dataAnim = ele.attr('data-anim');
+                    var dataAnimNum = parseInt(dataAnim);
+                    var dataAnimNext = dataAnimNum + 1;
+                    ele.attr('data-anim', dataAnimNext);
+                    var originSrc = '../images/planes/blank-smoke.png';
+                    var src = '../images/planes/smoke.gif';
+                    $(ele)
+                        .find('img')
+                        .attr('src', src)
+                        .delay(500) // pauses for n milliseconds
+                        .queue(function(next) {
+                            $(this).attr('src', originSrc);
+                            next();
+                        });
+                } else {
+                    console.log('wrong');
+                    var ele = $('#' + teamResult['teamId']).find('.plane');
+                    $(ele)
+                        .parent()
+                        .attr('data-bump', 'on')
+                        .delay(500) // pauses for n milliseconds
+                        .queue(function(next) {
+                            $(this).attr('data-bump', 'off');
+                            next();
+                        });
+                }
+            });
+
+            socket.on('planeFinished', function(message) {
+                if (message) {
+                    console.log(
+                        'The team ' +
+                            message['teamName'] +
+                            ' completed the Quiz'
+                    );
+                    $('#' + message['teamName']).addClass('quiz-finished');
+                }
+            });
+
+            $('.hotspot-load-team-choice').click(function() {
+                socket.emit('adminAllowTeamName', 'adminAllowTeamName');
+                $('.lds-dual-ring').fadeIn();
+                setTimeout(() => {
+                    $('.lds-dual-ring').fadeOut();
+                }, 5000);
+            });
+
+            $('.hotspot-gotostats').click(function() {
+                var ranks = {};
+                $('.progress-group').each(function() {
+                    if (!$(this).hasClass('hide')) {
+                        ranks[$(this).attr('id')] = $(this)
+                            .find('.rank')
+                            .text();
+                        console.log($(this));
+                    }
+                });
+                console.log('ranks', JSON.stringify(ranks));
+                localStorage.setItem('teamsRank', JSON.stringify(ranks));
+                location.href = '/admin-stats';
+            });
+        </script>
+    </body>
+</html>
